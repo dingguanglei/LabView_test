@@ -1,9 +1,40 @@
 
 function gen_btn() {
-    var send ="";
-    for (var i = 0; i < 10000; i++) {
-        send+= Math.floor(Math.random() * 10);
+    // var seed = "1234";
+    var seed = document.getElementById("seedInput").value+"";
+    if(seed.length!==4){
+        alert("请输入4位随机数种子！");
+        return;
     }
+    else{
+        var s1 = parseInt(seed[0])+1;
+        var s2 = parseInt(seed[1])+s1;
+        var s3 = parseInt(seed[2])+3;
+        var s4 = parseInt(seed[3])+s2;
+        var s5 = 0;
+        var send ="";
+        for (var i = 0; i < 10000; i++) {
+
+
+            s5 = (s1*s3+s2*Math.pow(s4,s1))%(i+13579);
+
+            s5 = (s5+"");
+            s5 = parseInt(s5[(i+17)%s5.length])+parseInt((s2+"")[0]);
+
+            send+= (s5+"")[(i+133)%(s5+"").length];
+            s1=s2;
+            s2=s3;
+            s3=s4;
+            s4=s5;
+    }
+
+
+    }
+    //
+    // var send ="";
+    // for (var i = 0; i < 10000; i++) {
+    //     send+= Math.floor(Math.random() * 10);
+    // }
     var sendText = document.getElementById("sendText");
     sendText.value = send;
 
@@ -58,6 +89,7 @@ function eval_btn() {
     var correct_num = document.getElementById("correct_num");
     var error_num = document.getElementById("error_num");
     var correct_rate = document.getElementById("correct_rate");
+    alert(correctNum);
     total_num.innerHTML = Total;
     correct_num.innerHTML = correctNum;
     error_num.innerHTML = parseInt(Total)-parseInt(correctNum);

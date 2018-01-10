@@ -19,6 +19,12 @@
     <textarea name="receive" id="receiveText" cols="80" rows="40"></textarea>
 </div>
 <div class="btn-box">
+    <label for="seedInput">随机数种子：
+
+        <input id ="seedInput" type="number"  min="1000" max="9999" placeholder="输入4位随机数种子：例：1234" >
+        <p>随机数种子会生成唯一的数字序列</p>
+    </label>
+
     <button id="gen-btn" onclick="gen_btn()">生成随机数</button>
     <button id="eval-btn" onclick="eval_btn()">计算正确率</button>
     <button id="clear" onclick="clear_btn()">清空</button>
@@ -28,6 +34,7 @@
         <li>错误个数：<span id="error_num"></span></li>
         <li>正确率：<span id="correct_rate"></span></li>
     </ul>
+
 </div>
 
 </body>
