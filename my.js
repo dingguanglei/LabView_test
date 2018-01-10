@@ -18,10 +18,17 @@ function clear_btn() {
     receive_num.innerHTML= 0;
 
 }
+function iGetInnerText(testStr) {
+    var resultStr = testStr.replace(/\ +/g, ""); //去掉空格
+    resultStr = resultStr.replace(/[ ]/g, "");    //去掉空格
+    resultStr = resultStr.replace(/[\r\n]/g, ""); //去掉回车换行
+    return resultStr;
+}
 function eval_btn() {
 
     var sendText = document.getElementById("sendText").value;
-    var receiveText = document.getElementById("receiveText").value;
+    var receiveText = iGetInnerText(document.getElementById("receiveText").value);
+    document.getElementById("receiveText").value = receiveText;
     var correctNum = 0;
     var Total = sendText.length;
     var send_num = document.getElementById("send_num");
