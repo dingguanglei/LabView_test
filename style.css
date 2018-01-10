@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.box{
+    float: left;
+    width:38%;
+    margin-right: 2%;
+}
+.box textarea{
+    width:100%;
+}
+body{
+    margin:20px;
+}
+body:after{
+    clear:both;
+    overflow: hidden;
+}
+.btn-box{
+    float: left;
+    width:20%;
+}
+button{
+    display: block;
+    width:10em;
+    height:3em;
+    -webkit-border-radius: 5px 5px ;
+    -moz-border-radius: 5px 5px ;
+    border-radius: 5px 5px ;
+    margin:20px auto;
+}
+h1{
+    margin:15px 0;
+}
+ul{
+    padding-left: 20px;
+}
+ul li{
+    list-style: none;
+}
