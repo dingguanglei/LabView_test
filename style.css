@@ -40,8 +40,9 @@ ul li{
     list-style: none;
 }
 input{
-    width:10em;
-    height:3em;
+    width:80%;
+    height:1em;
+    font-size: 2em;
     margin:15px auto;
     display: block;
 }
