@@ -19,10 +19,22 @@
     <textarea name="receive" id="receiveText" cols="80" rows="40"></textarea>
 </div>
 <div class="btn-box">
-    <label for="seedInput">随机数种子：
+    <p>选择随机数生成方式：</p>
+    <div>
+        <label for="seedInput">随机数种子：
+            <input class="line-box" name="type" checked id ="seedTypeInput" onclick="showSeedBox()" type="radio" >
+        </label>
+        <label for="seedInput">完全随机序列：
+            <input class="line-box" name="type"  id ="randomTypeInput" type="radio"  onclick="hideSeedBox()" >
+        </label>
+    </div>
+
+
+    <label id="seed-box" for="seedInput" style="display: block">随机数种子：
         <input id ="seedInput" type="number"  min="1000" max="9999" placeholder="4位随机数种子" >
         <p>随机数种子会生成唯一的数字序列</p>
     </label>
+
     <label for="numInput">生成数字数目：
         <input id ="numInput" type="number"  min="10000" step="10000" max="100000" value="100000" >
         <p>选择生成随机数的个数，<br>10,000-100,000</p>
